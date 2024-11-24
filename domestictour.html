@@ -1236,8 +1236,7 @@
             </div>
         </div>
     </div>
-
-
+    
     <!-- Footer Starts-->
     <footer id="footerwebs">
         <div class="container-fluid mt-5 p-5">
@@ -1294,6 +1293,22 @@
         </div>
     </footer>
     <!--Footer End-->
+    <script>
+        items.forEach((el) => {
+            const minPerSlide = 4
+            let next = el.nextElementSibling
+            for (var i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                    // wrap carousel by using first child
+                    next = items[0]
+                }
+                let cloneChild = next.cloneNode(true)
+                el.appendChild(cloneChild.children[0])
+                next = next.nextElementSibling
+            }
+        })
+
+    </script>
 
     <script>
         function togglePaymentFields() {

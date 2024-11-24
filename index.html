@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
 <body class="bg-light">
@@ -66,9 +65,9 @@
   </nav>
   <!--Nav bar Ends-->
 
+  <!--Craousel Start-->
   <div class="container-fluid mt-2">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
       <!-- Indicators/dots -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -80,19 +79,19 @@
 
       <!-- The slideshow/carousel -->
       <div class="carousel-inner">
-        <div class="carousel-item  carousel-item_01 active">
+        <div class="carousel-item carousel-items_01 active">
           <img src="images/slider1.jpg" alt="Los Angeles" class="img-fluid d-block">
         </div>
-        <div class="carousel-item carousel-item_01">
+        <div class="carousel-item carousel-items_01">
           <img src="images/slider6.jpg" alt="Chicago" class="img-fluid d-block">
         </div>
-        <div class="carousel-item carousel-item_01">
+        <div class="carousel-item carousel-items_01">
           <img src="images/slider7.webp" alt="Chicago" class="img-fluid d-block">
         </div>
-        <div class="carousel-item carousel-item_01">
+        <div class="carousel-item carousel-items_01">
           <img src="images/slider2.jpg" alt="Chicago" class="img-fluid d-block">
         </div>
-        <div class=" carousel-item carousel-item_01">
+        <div class=" carousel-item carousel-items_01">
           <img src="images/slider4.jpg" alt="New York" class="img-fluid d-block">
         </div>
       </div>
@@ -455,13 +454,14 @@
   </footer>
   <!--Footer End-->
   <script>
-    items.forEach((el) => {
+    let items_01 = document.querySelectorAll('.carousel_02 .carousel-item_02')
+    items_01.forEach((el) => {
       const minPerSlide = 4
       let next = el.nextElementSibling
       for (var i = 1; i < minPerSlide; i++) {
         if (!next) {
           // wrap carousel by using first child
-          next = items[0]
+          next = items_01[0]
         }
         let cloneChild = next.cloneNode(true)
         el.appendChild(cloneChild.children[0])
@@ -492,10 +492,7 @@
   </script>
 
   <script>
-
-
     let items_3 = document.querySelectorAll('.carousel_03 .carousel-item_03')
-
     items_3.forEach((el) => {
       const minPerSlide = 4
       let next = el.nextElementSibling
@@ -509,7 +506,6 @@
         next = next.nextElementSibling
       }
     })
-
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
